@@ -1,0 +1,366 @@
+<html><body>
+<h3><strong>Knowledge Graph Logics (Videos and slides)  - Learning Objectives: </strong></h3>
+<p>In this Activity, we will introduce Knowledge Graphs as an appropriate means to formalise data.</p>
+<p>At the end of this Activity, you should have a basic understanding of&nbsp;</p>
+<ul>
+<li>what Data, Information and Knowlegde is,</li>
+<li>what Knowledge Graphs are and why they are useful tools to represent Data, in particular when this Data is published for reuse by others,</li>
+<li>what a formal System is</li>
+<li>how to represent Knowledge Graphs with a very simple formalism that we call Simple Knowledge Graph Logic SKGL.</li>
+</ul>
+<p>We will recall (or introduce) some basic notions of Propositional Logic, as those are useful to understand Simple Knowledge Graph Logic.&nbsp;</p>
+<h2>Formal foundations of Knowledge Graphs</h2>
+<h3>1) Data, Knowledge and Information</h3>
+<p>In this lecture, we will introduce the core notions of Data, Information and Knowledge, and show that knowledge is an essential ingredient for turning raw data into useful Information. In many application problems, this knowledge is tacit, or implicit, in the heads of the Data Scientists or the Database (IT) Department of a company.</p>
+<p>This is very cost intensive, and only works when the data remains in its data silo: as soon as we think about reuse or integration of different data sources, there would be an enormous gain if this knowledge was available in an explicit way.&nbsp;</p>
+<p>The following video (of about 16 minutes) <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/DataInformationKnowledge/">expand view</a>)</strong> argues for explicit, formalised knowledge, as an essential means for turning raw Data into valuable Information.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/DataInformationKnowledge/" width="300" height="150"></iframe></p>
+<p><strong>View the slides on&nbsp;<a href="https://stable.slidewiki.org/deck/10640">https://stable.slidewiki.org/deck/10640</a> or below to comment and ask questions about individual slides! (one-time free no-</strong></p>
+<p><strong>strings-attached registration required for commenting) </strong></p>
+<p><iframe src="https://stable.slidewiki.org/deck/10640-1/slide/47429-1/47429-1:1/view" width="800" height="400"></iframe></p>
+<p>I found&nbsp;<a href="https://www.slideshare.net/mcjenkins/knwoedgebase-vs-database">https://www.slideshare.net/mcjenkins/knwoedgebase-vs-database</a> a rather good discussion on the relation between data and knowledge, and the impact this had on the systems one had to develop.</p>
+<h3><strong>2) </strong>Knowledge Graphs</h3>
+<p>The big question now is what good ways are to integrate big collections of data with explicit knowledge. While relational databases are constructed to optimise data access, they are not idea for data integration, and making the meaning of the relations between data items explicit.</p>
+<p>In this video, we will argue why Knowledge Graphs are natural representation formalisms for data, as it provides natural ways to make the intrinsic meaning of the data explicit.</p>
+<p>If this is indeed true, we need to understand how to model data and knowledge in a Knowledge Graph as a formal system. In short, a formal system is a formal language equipped with a formal meaning (a notion of truth), that can be evaluated by a computer program. This should quarantee <em>predictable inference,</em> in other words whoever works with a Knowledge Graph in this formalisms should get precisely the same answers.&nbsp;</p>
+<p>The following video explains this idea in more detail.</p>
+<p>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/Knowledge%20Graphs/">expand view</a>):<br /><br /></p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/Knowledge%20Graphs/" width="300" height="150"></iframe></p>
+<p><strong>View the slides on&nbsp;<a href="https://stable.slidewiki.org/deck/10641">https://stable.slidewiki.org/deck/10641</a> or below to comment and ask questions about individual slides! </strong></p>
+<p><iframe src="https://stable.slidewiki.org/deck/10641/slide/47442-1" width="800" height="400"></iframe></p>
+<p>&nbsp;</p>
+<h3>3) Propositional Logic</h3>
+<p>Before we work out a formal system for Knowledge Graphs we should have a better understanding of what a formal system is, and how to build one. For this purpose, we have a(nother) look at Propositional Logic. Some of you have followed a course in Logic, others have not. For the former, this video is a reminder, for the others, a new material.</p>
+<p>Propositional Logic is a well known formal system to represent and reason over "Propositions", statements that can either be true or false. Most people would agree that it is the canonical Logic, a very simple formal system, that is easy to understand, while still very useful in practise.</p>
+<p>Understanding how Propositional Logic is formally defined will be useful to understand the more complex Simple Knowledge Graph Logic (and its more complex variants we will study later).</p>
+<p>The following Video lecture (37 minutes) introduces the Syntax and Semantics of PL<strong> (<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/Propositional%20Logic/index.html">expand view</a>):</strong><br /><br /></p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/Propositional%20Logic/index.html" width="300" height="150"></iframe></p>
+<p>There is plenty of literature on Propositional Logic. Should things not be clear yet, we recomment that you read: <a class="instructure_file_link instructure_scribd_file" title="HuthRyanChapter1.pdf" href="https://canvas.vu.nl/courses/24675/files/73267/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/73267" data-api-returntype="File">HuthRyanChapter1.pdf</a> and <a class="instructure_file_link instructure_scribd_file" title="huth-ryan-section2.4.pdf" href="https://canvas.vu.nl/courses/24675/files/73268/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/73268" data-api-returntype="File">huth-ryan-section2.4.pdf</a>.</p>
+<p><strong>View the slides on&nbsp;<a href="https://stable.slidewiki.org/deck/10623">https://stable.slidewiki.org/deck/10623</a> or below to comment and ask questions about individual slides! (one-time free no-strings-attached registration required for commenting) </strong></p>
+<p><iframe src="https://stable.slidewiki.org/deck/10623-1/slide/47208-2/47208-2:1/view" width="800" height="400"></iframe></p>
+<p>&nbsp;</p>
+<h3>4) Formal Systems</h3>
+<p>Propositional Logic was introduced as one of the most intuitive and simple Formal Systems. Before we look at how to represent Knowledge Graphs formally, let us try to get a bit more intuition about Formal Systems.</p>
+<p>The following Video lecture discusses some more examples of Formal Systems<strong> (<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/Formal%20Systems/">expand view</a>):</strong><br /><br /></p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/Formal%20Systems/" width="300" height="150"></iframe></p>
+<p><strong>View the slides on&nbsp;<a href="https://stable.slidewiki.org/deck/10642">https://stable.slidewiki.org/deck/10642</a> or below to comment and ask questions about individual slides! (one-time free no-strings-attached registration required for commenting) </strong></p>
+<p><iframe src="https://stable.slidewiki.org/deck/10642-1/slide/47457-2/47457-2:1/view" width="800" height="400"></iframe></p>
+<p>&nbsp;</p>
+<h3>5) Simple Knowledge Graph Logic (SKGL)</h3>
+<p>SKGL is not an "officially recognised" logic, but a very simple, home made, system to formalise a special type of simple knowledge graphs. It is a subset of more expressive official languages, such as RDF.</p>
+<p>The advantage of this Formal System is that it can be easily extended, first towards a Web Language, and secondly towards integrating knowledge. But that will be the topics of the next learning activities.</p>
+<p>The following Video lecture introduces the Syntax and Semantics of SKGL<strong> (<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/KnowledgeGraphLogic/">expand view</a>):</strong><br /><br /></p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/KnowledgeGraphLogic/" width="300" height="150"></iframe></p>
+<p><strong>View the slides on&nbsp;<a href="https://stable.slidewiki.org/deck/10643">https://stable.slidewiki.org/deck/10643</a> or below to comment and ask questions about individual slides! (one-time free no-strings-attached registration required for commenting) </strong></p>
+<p><iframe src="https://stable.slidewiki.org/deck/10643-1/slide/47468-2/47468-2:1/view" width="800" height="400"></iframe></p>
+<p>&nbsp;</p>
+<h3>Practical Assignment</h3>
+<p>You should now be ready to do the first practical assignment</p>
+<p><a title="Practical assignment 1 (Manipulating formal systems, PL)" href="https://canvas.vu.nl/courses/24675/assignments/9300" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/assignments/9300" data-api-returntype="Assignment">Practical assignment 1 (Manipulating formal systems, PL), available on 6 september) </a></p>
+<p>and the first test:</p>
+<p><a title="Assessment 1a" href="https://canvas.vu.nl/courses/24675/assignments/9301" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/assignments/9301" data-api-returntype="Assignment">Test 1 (Quiz), available on Monday (11 september)</a></p>
+<p>Just follow the links, and you will get more explanation.</p>
+
+<h3><strong> KGs on the Web: Linked Data, RDF and SPARQL (Videos and slides) - Learning Objectives: </strong></h3>
+<p>In this Activity, we will introduce Linked Data, and the RDF data model as a technology to publish and consume data one the Web.</p>
+<p>At the end of this Activity, you should have a basic understanding of&nbsp;</p>
+<ul>
+<li>the restrictions of data publishing and consumption on the current Web.</li>
+<li>the potential of knowledge graphs as a publishing paradigm for Web Data.</li>
+<li>RDF, in particular &nbsp;
+<ul>
+<li>the data model in general,</li>
+<li>it's syntax, including the Turtle serialisation</li>
+<li>semantics</li>
+</ul>
+</li>
+<li>the SPARQL language and know how to use it to access and manipulate RDF data</li>
+</ul>
+<p>These lectures should give you sufficient background knowledge for the 2nd practical assignment.&nbsp; In the test (quiz) at the end of this module, you will be asked general questions about Data publishing on the Web, RDF and SPARQL.</p>
+<h2>Recap on Module 1</h2>
+<p>In this short video <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/recap/">expand view</a>)</strong>, we recall the main things introduced in the previous module.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/recap/" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<h3></h3>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="Recap.pdf" href="https://canvas.vu.nl/courses/24675/files/143834/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143834" data-api-returntype="File">here</a>.</p>
+<p>&nbsp;</p>
+<h2>(Linked) Data on the Web</h2>
+<h3>1) Data on the current Web</h3>
+<p>The following video of about 15 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/Dataonthecurrentweb/">expand view</a>)</strong>&nbsp; discusses the problems of publishing data on the current Web.</p>
+<p>The Web of Documents has been devised for human consumption, and that means that even the information that has been produced from structured databases can usually not be accessed programmatically by anybody but the data-owner, let alone be combined with datasources from other locations and owners.</p>
+<p>Since the Web 2.0 the users of the Web have started to also produce data directly (think of Facebook, Twitter and Youtube), and even more data is collected about the user and their behaviour. While this data can in some cases be accessed via APIs, it can hardly be reused as the data is not semantically annotated or linked.</p>
+<p>Knowledge Graphs are a format that can help overcome this world of data silos on the Web.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/Dataonthecurrentweb/" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="Data on the Current Web.pdf" href="https://canvas.vu.nl/courses/24675/files/143822/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143822" data-api-returntype="File">here</a>.</p>
+<h3>2) Knowledge Graphs on the Web (aka Linked Data, or the Web of Data)</h3>
+<p>One of the best motivation for a Web of Data comes from the inventor of the Web himself, Tim Berners-Lee. Worth watching:</p>
+<p><iframe src="https://embed.ted.com/talks/tim_berners_lee_on_the_next_web" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
+<h4>3.1. General Introduction (why and how?)</h4>
+<p>In the last video, Berners-Lee strongly argues for the value of data, and how beneficial it would be to publish data on the Web, and in particular, how to make it really useful on the Web.</p>
+<p>The following lecture of about 20 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/KGontheWeb/">expand view</a>)</strong> explains our claim that Knowledge Graphs are a very appropriate technology to make data-sharing and reuse possible in the first place. First, we will show the benefits of linking datasets, which leads to the notion of Linked Data.</p>
+<p>For this to come from a vision and dream to reality, there are 4 proposals of things that need to be done:</p>
+<ol>
+<li>Give everything a name</li>
+<li>The names are addresses on the Web</li>
+<li>Relations form a graph between things</li>
+<li>Model knowledge</li>
+</ol>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/KGontheWeb/" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="Knowledge Graphs on the Web.pdf" href="https://canvas.vu.nl/courses/24675/files/143824/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143824" data-api-returntype="File">here.</a></p>
+<p>In the video we also argue that Inference, i.e. the capability to derive new information from data according to the formal Semantics of the statements in the knowledge graph, or to make implicit information explicit is an important part for publishing data on the Web. We will later deal with more expressive knowledge, with a schema language RDFS <a title="Week 3" href="https://canvas.vu.nl/courses/24675/modules/2802" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/modules/2802" data-api-returntype="Module">(Module 3)</a> and an richer ontology language OWL (<a title="Week 4" href="https://canvas.vu.nl/courses/24675/modules/2803" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/modules/2803" data-api-returntype="Module">Module 4</a>).&nbsp;</p>
+<p>It should be clear from the what we introduced in Module 1, that Knowledge Graph, and their formalisms are very appropriate data models for representing Data on the Web. But it should also be clear that there are not only technological challenges (standards, tools, etc) but also societal challenges.</p>
+<p>Tim Berners-Lee discusses what it means to publish data on the web. One major criticism of the technology has been that linking depends on shared vocabularies, and that there would never be agreement on using one conceptualisation of the world, and vocabulary. Instead, think of a bag of crisps (or was it chips?). Another nice presentation from him:</p>
+<p><iframe style="width: 640px; height: 480px;" title="Gov 2.0 Expo 2010:   Tim Berners-Lee, &quot;Open, Linked Data for a Global Community&quot;" src="https://www.youtube.com/embed/ga1aSJXCFe0?feature=oembed&amp;rel=0" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
+<h4>3.2. RDF: Triples, Resources, URIs and Literals and Graphs</h4>
+<p>In the following video of about 23 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/rdf/">expand view</a>) </strong>introduces the data model RDF, which is the formal systems used to combine the Knowledge Graph language we introduced in Module 1 with the Web technology required to make it a true Web language.<br /> <br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/rdf/" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="RDF.pdf" href="https://canvas.vu.nl/courses/24675/files/143833/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143833" data-api-returntype="File">here.</a></p>
+<p>In order to port data to the Web, Tim Berners-Lee proposes 4 principles, also called the Linked Data principles:</p>
+<ul>
+<li>URIs (to give names to things)</li>
+<li>HTTP (look up those names)</li>
+<li>Dereference (provide useful information about them, hopefully data enriched with formalised knowledge)</li>
+<li>Links to other URIs</li>
+</ul>
+<p>RDF has been devised to cater for all those principles: the main elements of triples are the references to resources (URIs), one is encouraged to use HTTP resources (names with a website attached to it, and that is ideally machine readable (i.e. in RDF again)). The knowledge graph format, obviously, lends itself perfectly for linking with other URIs that, given the web-nature of those identifiers can be easily integrated from datasets at different locations on the Web.</p>
+<h4>3.4 Blank nodes (Variables)</h4>
+<p>Up to now, the representation formalism for RDF were mostly extensions of our simple Knowledge Graph Logic from Module 1 with methods to integrate well-understood Web technology. This allows us to refer to Web objects in our language via URIs, link them using RDF triples and even get formally specified (additional)&nbsp; information via dereferencing.</p>
+<p>What we have not covered yet is the case when we want to talk about objects to which we cannot, or do not want to, give a name. In this case, RDF provides for a weak form of quantification, called Blank Nodes.</p>
+<p>A short video (less than 4 minutes) introduces these blank nodes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/blanknodes/">expand view</a>)</strong></p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/blanknodes/" width="300" height="150"></iframe></p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="Blank nodes (variables).pdf" href="https://canvas.vu.nl/courses/24675/files/143821/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143821" data-api-returntype="File">here.</a></p>
+<h4>3.5 Formal Syntax and Serialisations</h4>
+<p>As we discussed in Module 1, in order to be able to specify formal shared meaning to formulas, which can be unambigously interpreted by machines, we have to define first, which formulas (RDF graphs) are well-formed.</p>
+<p>The&nbsp; following video of about 15 minutes formalises the <a href="https://www.w3.org/TR/rdf11-concepts">Syntax of RDF</a> <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/rdfsyntax/">expand view</a>): <br /></strong></p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/rdfsyntax/" width="300" height="150"></iframe></p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="RDF Syntax.pdf" href="https://canvas.vu.nl/courses/24675/files/143832/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143832" data-api-returntype="File">here.</a></p>
+<p>The formalism is very similar to the definition we gave to our simple Knowledge Graph Logic in Module 1. The only difference is that we split the vocabulary in a different way: while in SKGL, we had a set of objects and a set of relations, this distinction is not made in RDF. This is a very interesting feature, as we can now treat properties as objects, and make explicit statements about them.</p>
+<p>We could, e.g., state that <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; has_sibling rdf:type rdfs:SymmetricProperty .</p>
+<p>in other words, that the has_simpling relation is symmetric (if I am the sibling of someone, (s)he is my sibling as well. This is formally complicated (as you will see when I discuss RDF models and interpretations, but very powerful to model properties of properties.</p>
+<p>Instead of distinguishing between properties and resources, in RDF a distinction is made between Resources, Literals and Blank nodes. As not all combinations of those sets is useful in triples, RDF is a subset of all the combinations of those three sets in the (s p o) positions.</p>
+<p>For practical reasons, different ways of writing down the information is also important. There are different so called serialisations, of which we study <a href="https://www.w3.org/TR/turtle/">Turtle</a> in more detail.</p>
+<h4>3.6 Semantics</h4>
+<p>The&nbsp; following video (12 minutes) briefly discusses the RDF semantics <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/rdfsemantics/">expand view</a>). <br /></strong></p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/rdfsemantics/" width="300" height="150"></iframe></p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="RDF Semantics.pdf" href="https://canvas.vu.nl/courses/24675/files/143830/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143830" data-api-returntype="File">here.</a></p>
+<p>It does not make much sense to fully introduce the model-theoretic semantics of RDF here, as it is rather tedious and advanced (<a href="https://www.w3.org/TR/rdf11-mt/">read here for the real fan</a>, but don't waste time on this). What is important to remember is that the basic idea of assigning semantics to RDF knowledge graphs is very similar to our approach in SKGL: for each triple we assign objects to the subject, predicate and object, and relations to the predicates (as mentioned before, predicates are objects and relations).</p>
+<p>An model of a graph is then an interpretation that satisfies all the triples. Special treatment is given to the blank-nodes, but the results is a theorem that's very similar to the one we had in SKGL (the theorem in the video is slightly weaker, btw):&nbsp;</p>
+<p><strong>Theorem (calculus):</strong> A graph G' is entailed by a graph G if G' can be rewritten into a subset of G, where rewriting means assigning a URI to a blank node.</p>
+<p>Here, the same semantic notion of entailment is applied as usual.</p>
+<p>An alternative view on Semantics is also given: like in the example discussed above by Tim Berners-Lee, one of the biggest advantages of the Web of Data initiative is the use of common vocabularies. While this does not allow for fully automated predictable inference by machines it is helpful nevertheless, as people who agree on a joint vocabulary usually also, up to a certain point, share a joint understanding of the concepts described in it.</p>
+<p>NOTE: there will be no questions in the test about the Model-theory (formal semantics) of RDF with 2 exceptions: you should know that entailmenht between RDF graphs G an RDF graphs G' is semantically defined in the usual way ( all models of G are models of G'), and that you can calculate entailment between G and G' by finding a replacement of blank nodes in G', so that this new graph G'' is a subset of G.</p>
+<h4>3.7 More on RDF</h4>
+<p>This final video lecture (10 minutes) touches on some important issues related to RDF. <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/moreonrdf/">expand view</a>)</strong></p>
+<p>While its called an RDF graph, e.g., RDF graphs are not real graphs as mentioned before.&nbsp; The lecture also discusses the nature of URIs in more detail. Important here, is that URIs should be confused with automatic lookup services. So whenever a user uses a URI, this does not imply that he or she has any authority over this resouce.</p>
+<p>The most important part of this video, though, is the 4 different ways in which RDF data can be published and accessed:</p>
+<ol>
+<li>As files on web-servers</li>
+<li>Embedded in existing websites as RDFa</li>
+<li>Via http and curl</li>
+<li>Via SPARQL APIs from Triple stores</li>
+</ol>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/moreonrdf/" width="300" height="150"></iframe></p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="More on RDF.pdf" href="https://canvas.vu.nl/courses/24675/files/143828/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143828" data-api-returntype="File">here.</a></p>
+<h3>RDF- Summary</h3>
+<ul>
+<li>RDF is a generic language for describing data about resources written in forms of web enabled Knowledge Graphs</li>
+<li>It extends the linking structure of the Web</li>
+<li>Data is represented as triples, consisting of URIs, literals and blank nodes</li>
+<li>Sets of triples form RDF graphs (which actually are not really graphs)</li>
+<li>Meta-data can be part of the data itself (self-documenting)</li>
+<li>Data can be easily linked to other datasets by sharing URIs</li>
+<li>It is completely application independent</li>
+</ul>
+<h2>Querying Knowledge Graphs with SPARQL</h2>
+<p>The final video of about 35 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/querying/">expand view</a>)</strong> introduces the SPARQL query language.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/querying/" width="300" height="150"></iframe></p>
+<p>You will need to understand SPARQL in order to finish the second assignment.</p>
+<p>There is also very good <a title="Literature-2" href="https://canvas.vu.nl/courses/24675/pages/literature-2" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/pages/literature-2" data-api-returntype="Page">literature</a> including screen-casts.&nbsp;</p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="Querying (week 2, previously semanticweb-3).pdf" href="https://canvas.vu.nl/courses/24675/files/143829/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143829" data-api-returntype="File">here.</a></p>
+<h2></h2>
+
+
+<h2>Schema knowledge with RDFS (Videos and Slides)- Learning Objectives:</h2>
+<p>In this Activity, we will move from pure data publishing to also integrate explicitly modelled knowledge. RDF Schema is the basic language for this purpose, and has been introduced as a simple language to model the data schema, as well as some initial facility for ontological knowledge.</p>
+<p>As we have discussed in the previous modules, formally modelled knowledge is the basic for predictable inferencing, which is based on the rules that implement the basic entailment relation.</p>
+<p>At the end of this Activity, you should have a basic understanding of&nbsp;</p>
+<ul>
+<li>The concept of knowledge and inferencing as opposed to data and querying.</li>
+<li>The fact that new information can be derived through logical inferencing on the basis of the formal meaning of the logical operators.</li>
+<li>The RDF Schema syntax.</li>
+<li>The entailment rules and inferencing for RDFS.</li>
+<li>The usage of vocabularies, that provide vocabularies with or without formal semantics for reuse when publishing data.</li>
+</ul>
+<p>These lectures should give you sufficient background knowledge for the 3th practical assignment.&nbsp; In the test (quiz) at the end of this module, you will be asked general questions about RDFS, inferencing, and data publishing.</p>
+<h2>Recap on Module 2</h2>
+<p>In this short video <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/recapM2/">expand view</a>)</strong>, we recall the main things introduced in the previous module.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/recapM2/" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="recapW2.pdf" href="https://canvas.vu.nl/courses/24675/files/175424/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/175424" data-api-returntype="File">here.</a></p>
+<h2>Publishing and Consuming Data on the Web</h2>
+<p>The following video of about 15 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/PublishingAndConsuming/index.html">expand view</a>)</strong> introduces different ways of publishing and consuming data on the Web. First, we can add triples and graphs manually to our knowledge graphs in a programming environment, as we did in the first practical assingment. Alternatively, we can add data to so called Triplestores, which are graph databases specialised for RDF graphs.</p>
+<p>This video should be very useful when you start working on the third assignment.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/PublishingAndConsuming/index.html" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="Publishing and Consuming RDF.pdf" href="https://canvas.vu.nl/courses/24675/files/175426/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/175426" data-api-returntype="File">here.</a></p>
+<h2>Knowledge and Inference on the Web</h2>
+<h3>1. Inferencing and entailment</h3>
+<p>The following video of about minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/Inferencing/index.html">expand view</a>)</strong>&nbsp; discusses the notions of knowledge and inferencing on the Web. Until now, we have mostly focussed on the publication and consumption of data in RDF. Given the formal semantics provided by a logical system (such as PL, RDF and RDFS) we know which facts are entailed and can devise rules to calculate all possible logical consequences.</p>
+<p>In the lecture we briefly touch upon the roots of knowledge representation with the Semantic Networks from Quillian from the Sixties. It was based on the unpredictability of the inferences that people started to develop formal semantics for networks, which nowadays allow for unambiguous notions of semantics and inference, such as entailment and logical consequence.</p>
+<p>Finally, we also discuss typical separations made in knowledge representation between instances and classes, as well as denotations and instantiation. <br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/Inferencing/index.html" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>If there is just one thing to remember from these slides, it should be the following principle (which should be known by now): <em>Formulas are axioms that restrict the possible interpretations of the world (the models of a Knowledge Base). Entailment is defined as truth in these restricted interpretations (models)</em>.</p>
+<p>Based on the power of these formal mechanisms, we can now devise languages and inference systems that can express rich knowledge about the data model and the domain itself. RDFS, the RDF Schema language, is the most simple of these knowledge representation languages.</p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="Stefan - Mod 3.1 Basic Inferencing in RDFS - Introduction.pdf" href="https://canvas.vu.nl/courses/24675/files/175425/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/175425" data-api-returntype="File">here.</a></p>
+<h3>2. RDF Schema (RDFS) and basic inferencing</h3>
+<p>In this lecture we introduce the basic notions w.r.t. RDFS as well as its inference capabilities.</p>
+<ul>
+<li>RDF Schema (RDFS) is a generic language for defining at the schema level what the semantics of data should be.</li>
+<li>It extends RDF</li>
+<li>Based on RDFS statements, an automated reasoner make inferences on the conceptual (schema) level and on the data level, and thereby derive new facts, or check for inconsistencies.</li>
+<li>For example, we can infer class membership by looking at rdfs:domain and rdfs:range restrictions of properties.</li>
+<li>Inferences are made at the schema level and the data level</li>
+<li>RDFS can be used to specify language labels and meta-data</li>
+</ul>
+<p>This video <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/RDFSchema/">expand view</a>)</strong> introduces RDFS and basic inferencing:</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/RDFSchema/" width="300" height="150"></iframe></p>
+<p>View the slides in PDF <a class="instructure_file_link instructure_scribd_file" title="Klaas- Mod 3.2 Basic Inferencing in RDF Schema1.pdf" href="https://canvas.vu.nl/courses/24675/files/174415/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/174415" data-api-returntype="File">here.</a><a class="instructure_file_link instructure_scribd_file" title="Data on the Current Web.pdf" href="https://canvas.vu.nl/courses/24675/files/143822/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/143822" data-api-returntype="File"></a><br /><br />You will need to understand RDFS and basic inferencing in order to finish the third assignment.</p>
+<p>The official reference for RDF schema is found <a href="https://www.w3.org/TR/rdf-schema/">here</a>.</p>
+<p>For those of you who are familiar with UML (Unified Modelling Language) there is a nice&nbsp;<a href="https://www.w3.org/TR/NOTE-rdf-uml/">Discussion of the Relationship Between RDF-Schema and UML here&nbsp; </a>(not compulsory reading)</p>
+<h3>3. RDFS Semantics and inference</h3>
+<p>It does not make much sense to fully introduce the model-theoretic semantics of RDFS for a variety of reasons. The problem is that the natural extension of the RDF semantics (where interpretations are graphs) is at odds with the interpretation of objects as instances of classes. We will therefore skip the discussion of the formal semantics of RDFS, as this is a rather advanced topic. Trust us, though, that there is a well defined model-theory, and that there is a theorem that states that with the inference or entailment rules (as presented in the previous videolecture),</p>
+<ol>
+<li>you can derive all the entailed formulas in RDFS, and</li>
+<li>all the formulas that follow from the application of the rules are indeed entailed.&nbsp;</li>
+</ol>
+<p>This means that in practise you can treat inference with the RDFS rules as equivalent to entailment.</p>
+<p>&nbsp;</p>
+<h3>4. RDF vocabularies and an example for Data Integration with RDFS</h3>
+<p>&nbsp;In the final lecture <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/vocabularies/index.html">expand view</a>)</strong>, we discuss RDF and RDFS as a vocabulary in RDF datasets. Basically this means that the special operators used to describe RDF information (rdf:type, etc) have to be referenced to in the namespaces of the RDF graph, which is the way of stating that RDF semantics has to be used. The same holds for RDFS. Unless we define the RDFS namespace, it is not clear for anybody how to interpret the special symbols used in RDFS axioms, such as rdfs:subClassOf, rdfs:subPropertyOf etc.</p>
+<p>This lecture ends with an example on how to use RDFS in a data integration problem. We show how to translate the JSON output of the Facebook and IMDB API to build RDF datasets, and how link the objects from the two databases in various ways (including using RDFS inferencing) .</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/vocabularies/index.html" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>View the slides <a class="instructure_file_link instructure_scribd_file" title="Stefan - Mod 3.3 RDF Schema and other vocabularies.pdf" href="https://canvas.vu.nl/courses/24675/files/174414/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/174414" data-api-returntype="File">in PDF here</a>.</p>
+
+
+<h2>Domain knowledge with OWL (Videos and slides) - Learning Objectives:</h2>
+<p>In this Activity, we will introdce the expressive Web Ontology Language OWL.</p>
+<p>As we have discussed in the previous modules formally specified knowledge is an essential ingredient for data sharing, and for data reuse in the first instance. With RDFS we have already studied an ontology language, which allowed us to model simple constraints on the data model and the domain of the data. Still, there are many things that cannot be said in RDFS, and this Module will introduce a language that maximises expressivity with well understood semantics and computational properties.</p>
+<p>At the end of this Activity, you should have a basic understanding of&nbsp;</p>
+<ul>
+<li>the OWL Web Ontology Language and its modelling primitives</li>
+<li>ways to model Class Restrictions and Properties.</li>
+<li>the Protege Ontology editor</li>
+</ul>
+<p>These lectures should give you sufficient background knowledge for the 4th practical assignment, which basically consists in building your own ontology. We recommend that you have already the final assignment in mind when you model your own ontology.&nbsp;<br /><br />You can also watch the video lectures on <a class=" inline_disabled" href="https://www.youtube.com/watch?v=ouS6554fP7I&amp;index=1&amp;list=PLQEgthnG5OOT2cGHbL0L0MDm2PC_6TGqy" target="_blank" rel="noopener noreferrer">YouTube </a>(by popular demand - you can watch at double speed).</p>
+<h2>Recap on Module 3</h2>
+<p>In this short video of 4 minutes&nbsp; <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/recapM3/">expand view</a> </strong>or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/recapM3/video.mp4">Download (file-&gt; save page as)</a>)</strong>, we recall the main things introduced in the previous module(s), starting from data publishing on the Web, RDF as a data model, and RDFS as a simple schema and ontology language.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/recapM3/" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>View a PDF version of the slides <a class="instructure_file_link instructure_scribd_file" title="Recap M3.pdf" href="https://canvas.vu.nl/courses/24675/files/192718/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/192718" data-api-returntype="File">here</a>.</p>
+<h2>Advanced Inferences with OWL</h2>
+<h3>1. More than RDFS: the need for ontologies</h3>
+<p>In this video lecture of about 28 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/OWLintro/index.html">expand view</a></strong> or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/OWLintro/video.mp4">Download (file-&gt; save page as)</a>)</strong> we recap the main knowledge representaiton principles, that underly the formal systems we use in this course to represent data and knowledge. There is also a reminder of the basic distinctions one makes in knowledge represtation about different types of knowledge, namely generic knowledge about classes of objects, usually called a terminology, and instances of those classes, the assertions.</p>
+<p>Discussing the weaknesss of RDFS we get to introduce OWL as an expressive&nbsp; language to model conceptual and individual knowlegde. Based on Description Logics with their formal model theoretic semantics, OWL is well understood, very expressive, while still having relatively good computational properties. <br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/OWLintro/index.html" width="300" height="150"></iframe></p>
+<p>View a PDF version of the slides <a class="instructure_file_link instructure_scribd_file" title="Stefan - Mod 4.1 Advanced Inferencing in OWL - Introduction.pdf" href="https://canvas.vu.nl/courses/24675/files/192719/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/192719" data-api-returntype="File">here</a>.</p>
+<h3>2. Class axioms and property types</h3>
+<p><span style="font-size: 12pt;">In this video lecture of 39 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/OWLclassrelation/">expand view</a> </strong>or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/OWLclassrelation/video.mp4">Download (file-&gt; save page as)</a>)</strong> we discuss OWL class axioms and property types. These are very useful for extensive description of how (not) to classify individuals and how (not) to use properties in the domain that your OWL ontology describes. The class axioms are used by a reasoner to detect inconistencies in your data. For example, when two specific classes A and B can never contain the same individual (or differently phrased: "an individual cannot belong to class A and B at the same time"). Moreover, a reasoner can infer that an instance belong to a specific class C because we already know it belongs to a union or intersection of two other classes A and B.</span></p>
+<p><span style="font-size: 12pt;">With property axioms we can declare for example that a property is reflexive, transitive, and functional, and a reasoner will then infer that there is a contradiction when these axioms are violated by your data (actual instances being related via a property in the wrong way), or the reasoner will infer new knowledge, for example, because you are using a transitive class (A -&gt; B -&gt; C == A -&gt; C) or reflexive class (A -&gt; B == B -&gt; A).</span></p>
+<p><span style="font-size: 12pt;">We discuss several of these OWL entailment rules, which are more expressive (and therefore useful) than the RDFS entailment rules we discussed last week.<br /> An important application of these rules is to classify new knowledge based on the existing class and property axioms in your OWL ontology. Or when merging two ontologies we can assign existing instances/data classified by on of the ontologies to the correct classes in another ontology by defining axioms about unions and disjunctions of classes in the two ontologies.</span></p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/OWLclassrelation/" width="300" height="150"></iframe></p>
+<p>View a PDF version of the slides <a class="instructure_file_link instructure_scribd_file" title="Klaas - Mod 4.2 Advanced Inferencing in OWL - Class axioms and Property types.pdf" href="https://canvas.vu.nl/courses/24675/files/192715/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/192715" data-api-returntype="File">here</a>.&nbsp;</p>
+<p>&nbsp;</p>
+<h3>3. Class Restrictions</h3>
+<p>In this&nbsp; lecture of 27 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/OWLclassrestrictions/index.html">expand view</a> </strong>or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/OWLclassrestrictions/video.mp4">Download (file-&gt; save page as)</a>)</strong>, we will discuss OWL Class restrictions, so the operators in OWL that allow you to restrict the properties of your ontology in a more fine-grained way than range and domain.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/OWLclassrestrictions/index.html" width="300" height="150"></iframe></p>
+<p>View a PDF version of the slides <a class="instructure_file_link instructure_scribd_file" title="Stefan - Mod 4.3 Advanced Inferencing in OWL - Class restrictions.pdf" href="https://canvas.vu.nl/courses/24675/files/192720/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/192720" data-api-returntype="File">here</a>.</p>
+<p>I made a short video, in which I try to explain the class axioms in a more "white board" <br />style. (be careful, this file is huge).</p>
+<p><iframe style="width: 600px; height: 300px;" title="Classes and Class axioms" src="https://canvas.vu.nl/courses/24675/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2F1197662-2.kaf.kaltura.com%2Fbrowseandembed%2Findex%2Fmedia%2Fentryid%2F1_g9w504bp%2FshowDescription%2Ffalse%2FshowTitle%2Ffalse%2FshowTags%2Ffalse%2FshowDuration%2Ffalse%2FshowOwner%2Ffalse%2FshowUploadDate%2Ffalse%2FplayerSize%2F400x285%2FplayerSkin%2F30624472%2F" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
+<h3>&nbsp;4. Punning</h3>
+<p>OWL has a very strict distinction between concepts and instances. Nothing is, in principle, allowed to be both a concept (class of objects) and an individual (object).</p>
+<p>In this&nbsp; short lecture <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/punning/index.html">expand view</a></strong> or <strong><a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/punning/video.mp4">Download (file-&gt; save page as)</a></strong>), we briefly mention a technique in OWL to do this anyway. The basic idea is that OWL interprets two things as different things if they are used both as concept and instances even though they have the same name (called punning).</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/punning/index.html" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<h3>5. Common Mistakes</h3>
+<p>In the final lecture of 12 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/commonMistakes/index.html">expand view</a> </strong>or <strong><a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/commonMistakes/video.mp4">Download (file-&gt; save page as)</a>)</strong>, we will discuss a number of common mistakes that beginners typically make when starting to model knowledge with OWL. An example is the overcommitment when using range and domain restrictions for properties, the distinction between complement and disjointness and problems with universal quantification. <br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/commonMistakes/index.html" width="300" height="150"></iframe></p>
+<p>View a PDF version of the slides <a class="instructure_file_link instructure_scribd_file" title="Stefan - Mod 4.4 Advanced Inferencing in OWL - summary, mistakes, further steps.pdf" href="https://canvas.vu.nl/courses/24675/files/192721/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/192721" data-api-returntype="File">here</a>.&nbsp;</p>
+<p>&nbsp;</p>
+<h3>6. Using Protege for modelling OWL ontologies</h3>
+<p>Protege is a Ontology editor that allows you to model knowledge in OWL in a more intuitive way than just writing down the axioms in turtle, which will very quickly become unmanagable. You need to install protege as described in the <a href="https://github.com/kadevgraaf/semanticweb-web-application-tutorial/blob/master/tools.md">tools document.</a></p>
+<p>Rinke Hoekstra made a nice screencast (12 minutes) last year to guide you step by step through the process of building an ontology in Protege.</p>
+<p><iframe src="https://player.vimeo.com/video/183829740" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
+<p><a href="https://vimeo.com/183829740">Using Protege</a> from <a href="https://vimeo.com/user21897792">Rinke Hoekstra</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p>The ontology from the Pizza tutorial is a good example: <a href="http://protege.stanford.edu/ontologies/pizza/pizza.owl" target="_blank" rel="noopener noreferrer">http://protege.stanford.edu/ontologies/pizza/pizza.owl</a>, but please be creative (toppings on fries instead of pizza's is not creative). The <a href="http://owl.cs.manchester.ac.uk/publications/talks-and-tutorials/protg-owl-tutorial/">tutorial itself is worth </a>reading. It guides you through building an ontology step by step</p>
+<p>&nbsp;</p>
+<h3>7. Ontology Engineering</h3>
+<p>We decided to postpone the Lecture on Ontology Engineering to next week as we believe that you enough to do to learn the OWL concepts without having to worry about the details of building a beautify ontology in a systematic way. Next week!</p>
+<p>&nbsp;</p>
+
+
+
+<h2>Ontology Engineering and Data integration (Videos and Slides) - Learning Objectives:</h2>
+<p>In this Activity, we will turn towards the task of ontology engineering and knowledge and data integration.&nbsp;</p>
+<p>As we have discussed in the previous modules formally specified knowledge is an essential ingredient for data sharing, and for data reuse in the first instance. You made a first contact with the web ontology language OWL, which provides a wide variety of operators to model highly complex properties of concept and instances, as well as relations between those. For the final assignment we need to build ontologies that make use of these modelling tools within OWL. In order to deal with the complexity of this task, we need to discuss the matter of Ontology Engineering in a bit more detail. How do you actually construct an ontology for your specific application and domain.</p>
+<p>Before we get to the final assignment, which will bring all the learned material together, we also need to address specific problems when integrating data on the Web. First, the ontologies people used to describe their data have to be mapped, the world-views unified, in other words. After that we can link the data. These will be the topics of this learning activity.</p>
+<p>At the end of this Activity, you should have a basic understanding of&nbsp;</p>
+<ul>
+<li>Ontology engineering, so how to build an ontology from scratch for an application</li>
+<li>Ontology mapping and alignment</li>
+<li>Integration of web data.</li>
+</ul>
+<p>There is also a video summarising the task for the final assignment (but a more detailed description will be provided as well at the beginning of next week).</p>
+<p>From Wednesday morning on, you can also watch the video lectures on YouTube (by popular demand - you can watch at double speed and with subtitles).</p>
+<h2>Recap on Module 4</h2>
+<p>In this short video of 4 minutes&nbsp; <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/recapM5/">expand view</a> </strong>or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/recapM5/video.mp4">Download (file-&gt; save page as)</a>)</strong>, we recall the main things introduced in the previous module(s), starting from data publishing on the Web, RDF as a data model, and RDFS and OWL as ontology languages.</p>
+<p><br /><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/recapM5/" width="300" height="150"></iframe></p>
+<p>View in <a class="instructure_file_link instructure_scribd_file" title="Stefan Mod 5.1. - recap and introduction.pdf" href="https://canvas.vu.nl/courses/24675/files/205942/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/205942" data-api-returntype="File">PDF</a> or on <a class=" inline_disabled" href="https://youtu.be/cfB_6Y9IO1o">Youtube</a>.&nbsp;</p>
+<h2>Ontology Engineering</h2>
+<p>This video of about one hour introduces some basic concepts of ontology engineering. This is a useful cookbook style introduction, which can be very valuable when you will have to construct your own ontology for the final assignment. <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/OntologyEngineering/index.html">expand view</a></strong> or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/OntologyEngineering/video.mp4">Download (file-&gt; save page as)</a>).</strong></p>
+<p>There are 8 steps one should take when building an ontology that will be discussed in detail in the lecture:</p>
+<ol>
+<li>Determine domain &amp; scope</li>
+<li>Consider reuse</li>
+<li>Enumerate terms</li>
+<li>Define taxonomy</li>
+<li>Define properties</li>
+<li>Define classes and their properties</li>
+<li>Define instances</li>
+<li>Check for anomalies</li>
+</ol>
+<p>While this is neither a linear process nor a law, it is very useful to understand these steps, that are explained in detail in the lecture before starting to build your ontology.</p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/OntologyEngineering/index.html" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>Also view in <a class="instructure_file_link instructure_scribd_file" title="Klaas Mod 5.2 - Ontology Engineering methodology.pdf" href="https://canvas.vu.nl/courses/24675/files/204461/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/204461" data-api-returntype="File">PDF</a> or on <a class=" inline_disabled" href="https://youtu.be/bdpNqqACVRU">Youtube</a>.</p>
+<p>&nbsp;</p>
+<h2>Ontology Matching</h2>
+<p>Before you can integrate different data source from the web, you need to make sure that the conceptualisation, in other word the ontology describing the data, are aligned. If you have two datasets about similar domains, which would be useful to combine, you need to make sure that the terminology, the vocabularies you use to describe the data, is compatible. This means that you need to model in some way or another, how the concepts from one vocabulary are related to the concepts from another one.</p>
+<p>But on the Web there are not only formal ontologies modelled in OWL with well-defined model-theoretic Semantics, but also other vocabularies with lesser or hardly any formal semantics. Those knowledge organisation schemes, such as Thesauri or Taxonomies are often very rich hierarchies of concepts used for example to organise topics in libraries or on the Web (such as catalogues). Many of those vocabularies are digitised and published online, and can be valuable sources of knowledge for reuse.</p>
+<p>Vocabularies are manifold on the We. The rich and expressive ontologies are most commonly modelled in OWL, thesauri and other hierarchies often make use of the SKOS vocabulary, which is about relating topics in terms of broader and narrower relations.&nbsp;</p>
+<p>Reusing these vocabuarlies means often combining them, through alignments (mapping concepts from one to the other ontology or vocabulary) or merging. These mappings can be done (semi)automatically via a number of algorithms, but is often performed "by hand" (as you will probably do in your final assignment).</p>
+<p>As in building ontologies, also in mappings there is no one-size-fits-all solution, and the quality of a mapping has to be evaluated.</p>
+<p>The following lecture gives an overview over ontology alignment <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/OntologyAlignment/index.html">expand view</a></strong> or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/OntologyAlignment/video.mp4">Download (file-&gt; save page as)</a>)</strong></p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/OntologyAlignment/index.html" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>View the slides on <a class=" inline_disabled" href="https://youtu.be/gnq9I0OTjRo">Youtube</a> or in <a class="instructure_file_link instructure_scribd_file" title="Stefan Mod 5.3 - ontology alignment and reuse.pdf" href="https://canvas.vu.nl/courses/24675/files/205314/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/205314" data-api-returntype="File">PDF.</a></p>
+<h2>Data Integration</h2>
+<p>The following videolecture of about 36 minutes <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/dataintegration/index.html">expand view</a></strong> or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/dataintegration/video.mp4">Download (file-&gt; save page as)</a>) </strong>finally addresses the issue of data integration based on the methods presented in the previous 4 modules. The mail idea is that knowledge graphs, modelled in RDF, can more easily be extended with explicit knowlegde and thus be very useful to combine different sources of potentially heterogeneous data. <strong><br /></strong></p>
+<p>In this lecture we first look at ways to transform existing datasources into RDF. This can be done via tools that help you transform relational databases or csv files into knowledge graphs. An alternative is to write programmes that interpret the json output of Web APIs, e.g. from facebook or IMDB, and store those interpretations in RDF.</p>
+<p>Now, we can use expressive schema and ontology languages to map those datasets, as is shown in the presentation. For accessing the external datasets there are various options: we can store all the relevant data in our Semantic Database (our triple-store), use SERVICE queries to integrate live queries to other endpoints in our SPARQL queries or use the knowledge to integrate the data on client side.</p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/dataintegration/index.html" width="300" height="150"></iframe></p>
+<p>&nbsp;</p>
+<p>&nbsp;View the slides in <a class="instructure_file_link instructure_scribd_file" title="Stefan Mod 5.4 - data integration.pdf" href="https://canvas.vu.nl/courses/24675/files/205939/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/205939" data-api-returntype="File">PDF</a>.</p>
+<p>There is also a nice screencast that explains how to use Openrefine to clean and transform a messy dataset into RDF.&nbsp; <iframe src="//player.vimeo.com/video/62430786?title=0&amp;amp;byline=0" width="300" height="150" allowfullscreen="allowfullscreen"></iframe></p>
+<p>This video is also a good example on how to produce RDF from existing datasources.</p>
+<p><iframe style="width: 640px; height: 480px;" title="From Excel file to RDF with links to DBpedia and Europeana" src="https://www.youtube.com/embed/XdpzmGxA33U?feature=oembed&amp;rel=0" width="300" height="150" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen"></iframe></p>
+<h2>Final Project</h2>
+<p>In this lecture we describe the final project, in which you will have to bring everything together that you've learned in the first 5 weeks of the course.</p>
+<p>The task is to build a web-application that combines different datasources from the Web and integrates this with datasources you might have built yourself and enriched with ontological information. You will have to this by integrating ontologies describing these datasources, and combining these with other vocabularies, match the data itself, enrich it with ontological domain knowledge and access it via SPARQL.</p>
+<p>There are also some nice examples in this video lecture <strong>(<a href="https://kadevgraaf.github.io/K-D-Video-Lectures/finalassignment/index.html">expand view</a></strong> or<strong> <a href="https://raw.githubusercontent.com/kadevgraaf/K-D-Video-Lectures/master/finalassignment/video.mp4">Download (file-&gt; save page as)</a>)</strong> to give you some intuition of what is expected and possible.</p>
+<p><iframe src="https://kadevgraaf.github.io/K-D-Video-Lectures/finalassignment/index.html" width="300" height="150"></iframe></p>
+<p>&nbsp;View in <a class="instructure_file_link instructure_scribd_file" title="Klaas Mod 5.5 - final project -semantic-web-applications.pdf" href="https://canvas.vu.nl/courses/24675/files/205941/download?wrap=1" data-api-endpoint="https://canvas.vu.nl/api/v1/courses/24675/files/205941" data-api-returntype="File">PDF</a> or on <a class=" inline_disabled" href="https://youtu.be/bWAeKeR1QO8">Youtube</a>.</p>
+<p><strong>Note: the rubric and project guidelines in this video lecture are not final. See the final project guidelines and rubric on Canvas for an updated version.</strong></p>
+<p>Example screencasts are on <a href="https://vimeo.com/189549359">https://vimeo.com/189549359</a> (no sound) and on <a class="" href="https://youtu.be/BIrILNG07es" data-preview-alt="ScreencastGroep19">ScreencastGroep19</a> (in Dutch) and on&nbsp;<a href="http://www.tinyurl.com/y7o82t27">http://www.tinyurl.com/y7o82t27</a> (in English, save/download to computer and open in video player)</p>
+
+</body></html>
